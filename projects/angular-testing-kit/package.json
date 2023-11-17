@@ -1,0 +1,38 @@
+{
+  "name": "@babybeet/angular-testing-kit",
+  "version": "0.0.1",
+  "description": "A set of convenient utilities to make Angular testing with Jasmine and Karma simpler",
+  "author": {
+    "name": "Baby Beet"
+  },
+  "keywords": [
+    "angular-testing-kit",
+    "angular-testing",
+    "angular-unit-testing",
+    "angular-testing",
+    "angular-component-testing",
+    "angular-jasmine-testing"
+  ],
+  "peerDependencies": {
+    "@angular/common": "16 - 17",
+    "@angular/core": "16 - 17",
+    "jasmine-core": "4",
+    "karma": "6",
+    "karma-chrome-launcher": "3",
+    "karma-coverage": "2",
+    "karma-jasmine": "5",
+    "karma-jasmine-html-reporter": "2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babybeet/angular-testing-kit"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "js-beautify": "^1.14.11"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  }
+}
