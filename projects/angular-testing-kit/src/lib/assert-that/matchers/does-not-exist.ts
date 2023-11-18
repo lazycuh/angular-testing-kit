@@ -17,7 +17,7 @@ export const doesNotExistMatcher = {
         const prettifiedHtml = html_beautify(actual.outerHTML, { end_with_newline: true, indent_size: 2 });
 
         result.error = new Error(
-          `${result.message}, but it was present (it should have been ${'`null`'}). It was\n${prettifiedHtml}`
+          `${result.message}, but it was present (it should have been null). It was\n${prettifiedHtml}`
         );
       }
     } else {
@@ -30,7 +30,7 @@ export const doesNotExistMatcher = {
         });
 
         result.error = new Error(
-          `${result.message}, but it was present (it should have been ${'`null`'}). It was\n${prettifiedHtml}`
+          `${result.message}, but it was present (it should have been null). It was\n${prettifiedHtml}`
         );
       }
     }

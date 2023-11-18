@@ -8,20 +8,20 @@ export const existsMatcher = {
       pass: actual !== null
     };
 
-    if (actual instanceof Element) {
-      result.message = `Expected a DOM element for '${selector}' to exist`;
+    if (typeof selector === 'string') {
+      result.message = `Expected DOM element for '${selector}' to exist`;
 
       if (!result.pass) {
         /*
          * Without the new line character at the end, this error message doesn't show when this assertion fails.
          */
-        result.error = new Error(`${result.message}, but it was missing (it should not have been ${'`null`'})\n`);
+        result.error = new Error(`${result.message}, but it was missing (it should not have been null})\n`);
       }
     } else {
       result.message = 'Expected debug element to exist';
 
       if (!result.pass) {
-        result.error = new Error(`${result.message}, but it was missing (it should not have been ${'`null`'})\n`);
+        result.error = new Error(`${result.message}, but it was missing (it should not have been null)\n`);
       }
     }
 
