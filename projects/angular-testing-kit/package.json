@@ -1,6 +1,6 @@
 {
   "name": "@babybeet/angular-testing-kit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A set of convenient utilities to make Angular testing with Jasmine and Karma simpler",
   "author": {
     "name": "Baby Beet"
