@@ -8,6 +8,7 @@
     "test:ci": "ng test --no-watch --browsers=ChromeHeadless",
     "prepare": "husky install",
     "lint": "eslint projects/**/*.{ts,html}",
+    "lint-staged": "lint-staged",
     "check-code-styles": "prettier --check \"**/(*.ts|*.json|*.md|*.html)\""
   },
   "type": "module",

@@ -1,3 +1,5 @@
+/// <reference path="types.d.ts"/>
+
 import { extractTextContent } from '../extract-text-content';
 import { findElementBySelector } from '../find-element-by-selector';
 import { getElementBySelector } from '../get-element-by-selector';
