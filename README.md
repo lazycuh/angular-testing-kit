@@ -94,7 +94,7 @@ The selector argument accepts 3 different types of value:
 - If it's a string, then it's treated as an HTML selector by which to find the target element
   to fire the event on. If no element is found for the provided selector,
   then an error will be thrown.
-- If it's an [`Element`](https://developer.mozilla.org/en-US/docs/Web/API/Element), then the event is fired directly on it.
+- If it's an [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) such as [`Element`](https://developer.mozilla.org/en-US/docs/Web/API/Element) or [`window`](https://developer.mozilla.org/en-US/docs/Web/API/Window), then the event is fired directly on it.
 - If it's a [`DebugElement`](https://angular.io/api/core/DebugElement), then its native element will be dispatched the event on.
 
 ```ts
