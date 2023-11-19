@@ -95,11 +95,41 @@ describe('assertThat(debugElement)', () => {
     assertThat(debugElement).hasInnerHtml('<span class="hello-world">Hello World</span>');
   });
 
+  it('#hasInnerHtml() should throw if debug element is null', () => {
+    expect(() => assertThat(null).hasInnerHtml('<span class="hello-world">Hello World</span>')).toThrow(
+      new Error('Debug element is null')
+    );
+  });
+
+  it('#hasInnerHtml() should throw if debug element is undefined', () => {
+    expect(() => assertThat(undefined).hasInnerHtml('<span class="hello-world">Hello World</span>')).toThrow(
+      new Error('Debug element is undefined')
+    );
+  });
+
   it('#hasTextContent() should pass', () => {
     assertThat(debugElement.query(By.css('.hello-world'))).hasTextContent('Hello World');
   });
 
+  it('#hasTextContent() should throw if debug element is null', () => {
+    expect(() => assertThat(null).hasTextContent('Hello World')).toThrow(new Error('Debug element is null'));
+  });
+
+  it('#hasTextContent() should throw if debug element is undefined', () => {
+    expect(() => assertThat(undefined).hasTextContent('Hello World')).toThrow(new Error('Debug element is undefined'));
+  });
+
   it('#hasTextContentMatching() should pass', () => {
     assertThat(debugElement.query(By.css('.hello-world'))).hasTextContentMatching(' World');
+  });
+
+  it('#hasTextContentMatching() should throw if debug element is null', () => {
+    expect(() => assertThat(null).hasTextContentMatching('Hello World')).toThrow(new Error('Debug element is null'));
+  });
+
+  it('#hasTextContentMatching() should throw if debug element is undefined', () => {
+    expect(() => assertThat(undefined).hasTextContentMatching('Hello World')).toThrow(
+      new Error('Debug element is undefined')
+    );
   });
 });

@@ -3,7 +3,7 @@ import { DebugElement } from '@angular/core';
 import { AssertThatApi } from './assert-that-api';
 
 export class DebugElementAssertThat implements AssertThatApi {
-  constructor(private readonly _debugElement: DebugElement) {}
+  constructor(private readonly _debugElement: DebugElement | null | undefined) {}
 
   doesNotExist() {
     expect(this._debugElement).doesNotExist();
@@ -14,14 +14,30 @@ export class DebugElementAssertThat implements AssertThatApi {
   }
 
   hasInnerHtml(expected: string) {
-    expect(this._debugElement.nativeElement.innerHTML).toEqual(expected);
+    this._throwIfDebugElementIsNullOrUndefined();
+
+    expect(this._debugElement?.nativeElement.innerHTML).toEqual(expected);
+  }
+
+  private _throwIfDebugElementIsNullOrUndefined() {
+    if (this._debugElement === null) {
+      throw new Error('Debug element is null');
+    }
+
+    if (this._debugElement === undefined) {
+      throw new Error('Debug element is undefined');
+    }
   }
 
   hasTextContent(expected: string) {
-    expect(this._debugElement.nativeElement.textContent).toEqual(expected);
+    this._throwIfDebugElementIsNullOrUndefined();
+
+    expect(this._debugElement?.nativeElement.textContent).toEqual(expected);
   }
 
   hasTextContentMatching(expected: string | RegExp) {
-    expect(this._debugElement.nativeElement.textContent).toMatch(expected);
+    this._throwIfDebugElementIsNullOrUndefined();
+
+    expect(this._debugElement?.nativeElement.textContent).toMatch(expected);
   }
 }
