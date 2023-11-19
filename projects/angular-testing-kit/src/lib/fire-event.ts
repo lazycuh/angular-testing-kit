@@ -1,12 +1,30 @@
+import { DebugElement } from '@angular/core';
+
 import { getElementBySelector } from './get-element-by-selector';
 
 /**
  * Dispatch the given `eventType` DOM event on the target element matched by the provided selector.
- * If no element is found for `selector`, then an error will be thrown.
+ * If no element is found for `selector`, then an error will be thrown. The selector argument
+ * accepts 3 different types of value:
+ *  - If it's a string, then it's treated as an HTML selector by which to find the target element
+ *    to fire the event on.
+ *  - If it's an {@link Element}, then the event is fired directly on it.
+ *  - If it's a {@link DebugElement}, then its native element will be dispatched the event on.
  *
  * @param selector HTML selector to match.
  * @param eventType DOM element type such as `click`, `pointerup`, etc.
+ * @param eventDetail Optional event detail to include such as the key code for keyboard event.
  */
-export function fireEvent(selector: string, eventType: keyof HTMLElementEventMap) {
-  getElementBySelector(selector).dispatchEvent(new CustomEvent(eventType));
+export function fireEvent<T extends keyof HTMLElementEventMap = keyof HTMLElementEventMap>(
+  selector: string | Element | DebugElement,
+  eventType: T,
+  eventDetail?: CustomEventInit<HTMLElementEventMap[T]>['detail']
+) {
+  if (typeof selector === 'string') {
+    getElementBySelector(selector).dispatchEvent(new CustomEvent(eventType as string, { detail: eventDetail }));
+  } else if (selector instanceof Element) {
+    selector.dispatchEvent(new CustomEvent(eventType as string, { detail: eventDetail }));
+  } else {
+    selector.nativeElement.dispatchEvent(new CustomEvent(eventType as string, { detail: eventDetail }));
+  }
 }

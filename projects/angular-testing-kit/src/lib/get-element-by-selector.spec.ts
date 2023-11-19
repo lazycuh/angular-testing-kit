@@ -28,6 +28,6 @@ describe('getElementBySelector()', () => {
     testDomElement.innerHTML = '<span>Hello World</span>';
     mountPoint.appendChild(testDomElement);
 
-    expect(() => getElementBySelector('.test')).toThrow(new Error(`No element with select '.test' was found`));
+    expect(() => getElementBySelector('.test')).toThrow(new Error(`No element with selector '.test' was found`));
   });
 });

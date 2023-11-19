@@ -9,7 +9,7 @@ export function getElementBySelector(selector: string) {
   const element = document.body.querySelector(selector);
 
   if (element === null) {
-    throw new Error(`No element with select '${selector}' was found`);
+    throw new Error(`No element with selector '${selector}' was found`);
   }
 
   return element as HTMLElement;
