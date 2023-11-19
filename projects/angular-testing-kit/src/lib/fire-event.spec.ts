@@ -25,4 +25,10 @@ describe('fireEvent()', () => {
 
     expect(eventListenerSpy).toHaveBeenCalledTimes(1);
   });
+
+  it('Should throw an error when the selector argument is not a string, Element, or DebugElement', () => {
+    expect(() => fireEvent(null, 'keyup')).toThrow(
+      new Error('The event target for the provided selector is not a string, Element, or DebugElement, it was null')
+    );
+  });
 });
