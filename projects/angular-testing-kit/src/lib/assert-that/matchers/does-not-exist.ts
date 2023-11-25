@@ -11,7 +11,7 @@ export const doesNotExistMatcher = {
     };
 
     if (actual instanceof Element) {
-      result.message = `Expected a DOM element for '${selector}' to not exist`;
+      result.message = `Expected a DOM element for selector '${String(selector)}' to not exist`;
 
       if (!result.pass) {
         const prettifiedHtml = html_beautify(actual.outerHTML, { end_with_newline: true, indent_size: 2 });

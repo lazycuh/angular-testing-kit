@@ -29,7 +29,7 @@ export function fireEvent<T extends keyof HTMLElementEventMap = keyof HTMLElemen
     selector.nativeElement.dispatchEvent(new CustomEvent(eventType as string, { detail: eventDetail }));
   } else {
     throw new Error(
-      `The event target for the provided selector is not a string, Element, or DebugElement, it was ${selector}`
+      `The event target for the provided selector is not a string, Element, or DebugElement, it was ${String(selector)}`
     );
   }
 }
