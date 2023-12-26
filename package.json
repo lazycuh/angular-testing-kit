@@ -33,7 +33,7 @@
     "@angular-eslint/template-parser": "^16.3.1",
     "@angular/cli": "^16.2.10",
     "@angular/compiler-cli": "^16.2.12",
-    "@babybeet/eslint-config-base": "^1.0.7",
+    "@babybeet/eslint-config-base": "^1.0.11",
     "@types/jasmine": "^4.6.4",
     "@types/js-beautify": "^1.14.3",
     "husky": "^8.0.3",

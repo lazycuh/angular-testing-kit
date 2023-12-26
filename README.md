@@ -48,7 +48,7 @@ A set of convenient utilities to make Angular testing with Jasmine and Karma sim
 
 ## `assertThat()`
 
-This assertion function accepts either a string or a [`DebugElement`](https://angular.io/api/core/DebugElement), it returns an assertion object that can be used to check for different conditions. The return assertion object has the following methods:
+This assertion function accepts either a string or a [`DebugElement`](https://angular.io/api/core/DebugElement), it returns an assertion object that can be used to check for different conditions. The returned assertion object has the following methods:
 
 ### `.doesNotExist()`
 
