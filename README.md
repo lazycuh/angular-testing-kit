@@ -6,6 +6,7 @@ A set of convenient utilities to make Angular testing with Jasmine and Karma sim
 
 <!-- toc -->
 
+- [Angular version compatibility](#angular-version-compatibility)
 - [Installation](#installation)
 - [`assertThat()`](#assertthat)
   - [`.doesNotExist()`](#doesnotexist)
@@ -30,6 +31,10 @@ A set of convenient utilities to make Angular testing with Jasmine and Karma sim
   - [Example](#example-8)
 
 <!-- tocstop -->
+
+## Angular version compatibility
+
+- 16+
 
 ## Installation
 
