@@ -4,5 +4,5 @@
  * @param selector HTML selector to match.
  */
 export function findElementBySelector(selector: string) {
-  return document.body.querySelector(selector) as HTMLElement | null;
+  return document.body.querySelector(selector);
 }

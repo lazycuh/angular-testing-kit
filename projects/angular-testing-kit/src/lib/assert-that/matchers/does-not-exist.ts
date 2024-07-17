@@ -24,7 +24,7 @@ export const doesNotExistMatcher = {
       result.message = 'Expected debug element to not exist';
 
       if (!result.pass) {
-        const prettifiedHtml = html_beautify(actual?.nativeElement.outerHTML, {
+        const prettifiedHtml = html_beautify((actual?.nativeElement as Element | null | undefined)?.outerHTML ?? '', {
           end_with_newline: true,
           indent_size: 2
         });

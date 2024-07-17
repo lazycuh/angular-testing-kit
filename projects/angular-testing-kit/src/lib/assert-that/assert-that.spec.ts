@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-unresolved */
 import { Component } from '@angular/core';
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
@@ -70,7 +72,7 @@ describe('assertThat(debugElement)', () => {
   let debugElement: DebugElement;
 
   beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+    void TestBed.configureTestingModule({
       declarations: [TestComponent]
     }).compileComponents();
   }));
@@ -96,15 +98,15 @@ describe('assertThat(debugElement)', () => {
   });
 
   it('#hasInnerHtml() should throw if debug element is null', () => {
-    expect(() => assertThat(null).hasInnerHtml('<span class="hello-world">Hello World</span>')).toThrow(
-      new Error('Debug element is null')
-    );
+    expect(() => {
+      assertThat(null).hasInnerHtml('<span class="hello-world">Hello World</span>');
+    }).toThrow(new Error('Debug element is null'));
   });
 
   it('#hasInnerHtml() should throw if debug element is undefined', () => {
-    expect(() => assertThat(undefined).hasInnerHtml('<span class="hello-world">Hello World</span>')).toThrow(
-      new Error('Debug element is undefined')
-    );
+    expect(() => {
+      assertThat(undefined).hasInnerHtml('<span class="hello-world">Hello World</span>');
+    }).toThrow(new Error('Debug element is undefined'));
   });
 
   it('#hasTextContent() should pass', () => {
@@ -112,11 +114,15 @@ describe('assertThat(debugElement)', () => {
   });
 
   it('#hasTextContent() should throw if debug element is null', () => {
-    expect(() => assertThat(null).hasTextContent('Hello World')).toThrow(new Error('Debug element is null'));
+    expect(() => {
+      assertThat(null).hasTextContent('Hello World');
+    }).toThrow(new Error('Debug element is null'));
   });
 
   it('#hasTextContent() should throw if debug element is undefined', () => {
-    expect(() => assertThat(undefined).hasTextContent('Hello World')).toThrow(new Error('Debug element is undefined'));
+    expect(() => {
+      assertThat(undefined).hasTextContent('Hello World');
+    }).toThrow(new Error('Debug element is undefined'));
   });
 
   it('#hasTextContentMatching() should pass', () => {
@@ -124,12 +130,14 @@ describe('assertThat(debugElement)', () => {
   });
 
   it('#hasTextContentMatching() should throw if debug element is null', () => {
-    expect(() => assertThat(null).hasTextContentMatching('Hello World')).toThrow(new Error('Debug element is null'));
+    expect(() => {
+      assertThat(null).hasTextContentMatching('Hello World');
+    }).toThrow(new Error('Debug element is null'));
   });
 
   it('#hasTextContentMatching() should throw if debug element is undefined', () => {
-    expect(() => assertThat(undefined).hasTextContentMatching('Hello World')).toThrow(
-      new Error('Debug element is undefined')
-    );
+    expect(() => {
+      assertThat(undefined).hasTextContentMatching('Hello World');
+    }).toThrow(new Error('Debug element is undefined'));
   });
 });

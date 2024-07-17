@@ -26,7 +26,7 @@ export function fireEvent<T extends keyof HTMLElementEventMap = keyof HTMLElemen
   } else if (selector instanceof EventTarget) {
     selector.dispatchEvent(new CustomEvent(eventType as string, { detail: eventDetail }));
   } else if (selector instanceof DebugElement) {
-    selector.nativeElement.dispatchEvent(new CustomEvent(eventType as string, { detail: eventDetail }));
+    (selector.nativeElement as Element).dispatchEvent(new CustomEvent(eventType as string, { detail: eventDetail }));
   } else {
     throw new Error(
       `The event target for the provided selector is not a string, Element, or DebugElement, it was ${String(selector)}`

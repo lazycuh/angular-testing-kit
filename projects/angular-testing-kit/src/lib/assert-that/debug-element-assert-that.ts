@@ -16,7 +16,7 @@ export class DebugElementAssertThat implements AssertThatApi {
   hasInnerHtml(expected: string) {
     this._throwIfDebugElementIsNullOrUndefined();
 
-    expect(this._debugElement?.nativeElement.innerHTML).toEqual(expected);
+    expect((this._debugElement?.nativeElement as HTMLElement | undefined | null)?.innerHTML).toEqual(expected);
   }
 
   private _throwIfDebugElementIsNullOrUndefined() {
@@ -32,12 +32,12 @@ export class DebugElementAssertThat implements AssertThatApi {
   hasTextContent(expected: string) {
     this._throwIfDebugElementIsNullOrUndefined();
 
-    expect(this._debugElement?.nativeElement.textContent).toEqual(expected);
+    expect((this._debugElement?.nativeElement as HTMLElement | undefined | null)?.textContent).toEqual(expected);
   }
 
   hasTextContentMatching(expected: string | RegExp) {
     this._throwIfDebugElementIsNullOrUndefined();
 
-    expect(this._debugElement?.nativeElement.textContent).toMatch(expected);
+    expect((this._debugElement?.nativeElement as HTMLElement | undefined | null)?.textContent).toMatch(expected);
   }
 }
