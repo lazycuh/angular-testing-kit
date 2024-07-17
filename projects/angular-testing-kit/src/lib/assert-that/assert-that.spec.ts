@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/no-unresolved */
-import { Component } from '@angular/core';
+import { Component, provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { DebugElement } from '@angular/core';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { assertThat } from './assert-that';
@@ -64,6 +64,7 @@ describe('assertThat(htmlSelector)', () => {
 describe('assertThat(debugElement)', () => {
   @Component({
     selector: 'bbb-test',
+    standalone: true,
     template: '<span class="hello-world">Hello World</span>'
   })
   class TestComponent {}
@@ -71,18 +72,18 @@ describe('assertThat(debugElement)', () => {
   let fixture: ComponentFixture<TestComponent>;
   let debugElement: DebugElement;
 
-  beforeEach(waitForAsync(() => {
-    void TestBed.configureTestingModule({
-      declarations: [TestComponent]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [TestComponent],
+      providers: [provideExperimentalZonelessChangeDetection()]
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     jasmine.addMatchers(matchers);
 
     fixture = TestBed.createComponent(TestComponent);
     debugElement = fixture.debugElement;
-    fixture.detectChanges();
   });
 
   it('#doesNotExist() should pass', () => {
