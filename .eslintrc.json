@@ -9,7 +9,7 @@
   "overrides": [
     {
       "files": ["*.ts"],
-      "extends": ["@babybeet/eslint-config-base", "plugin:@angular-eslint/recommended"],
+      "extends": ["@lazycuh/eslint-config-base", "plugin:@angular-eslint/recommended"],
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",

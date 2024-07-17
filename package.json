@@ -1,5 +1,5 @@
 {
-  "name": "@babybeet/angular-testing-kit",
+  "name": "@lazycuh/angular-testing-kit",
   "version": "1.1.0",
   "scripts": {
     "copy-assets": "cp CONTRIBUTING.md README.md LICENSE dist/*",
@@ -33,10 +33,10 @@
     "@angular-eslint/template-parser": "17.5.1",
     "@angular/cli": "^18.0.1",
     "@angular/compiler-cli": "^18.0.0",
-    "@babybeet/angular-testing-kit": "^1.0.8",
-    "@babybeet/eslint-config-base": "^1.0.12",
+    "@lazycuh/eslint-config-base": "^3.0.0",
     "@types/jasmine": "~5.1.0",
     "@types/js-beautify": "^1.14.3",
+    "eslint": "^9.7.0",
     "husky": "^9.0.11",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
@@ -47,6 +47,7 @@
     "lint-staged": "^15.2.4",
     "markdown-toc": "^1.2.0",
     "ng-packagr": "^18.0.0",
+    "prettier": "^3.3.3",
     "typescript": "~5.4.2"
   },
   "lint-staged": {

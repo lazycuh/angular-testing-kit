@@ -1,5 +1,5 @@
 {
-  "name": "@babybeet/angular-testing-kit",
+  "name": "@lazycuh/angular-testing-kit",
   "version": "1.1.0",
   "description": "A set of convenient utilities to make Angular testing with Jasmine and Karma simpler",
   "author": {
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/babybeet/angular-testing-kit"
+    "url": "git+https://github.com/lazycuh/angular-testing-kit"
   },
   "dependencies": {
     "tslib": "^2.3.0",

@@ -1,4 +1,4 @@
-# angular-testing-kit [![](https://circleci.com/gh/babybeet/angular-testing-kit.svg?style=svg&logo=appveyor)](https://app.circleci.com/pipelines/github/babybeet/angular-testing-kit?branch=main)
+# angular-testing-kit [![](https://circleci.com/gh/lazycuh/angular-testing-kit.svg?style=svg&logo=appveyor)](https://app.circleci.com/pipelines/github/lazycuh/angular-testing-kit?branch=main)
 
 A set of convenient utilities to make Angular testing with Jasmine and Karma simpler.
 
@@ -40,15 +40,15 @@ A set of convenient utilities to make Angular testing with Jasmine and Karma sim
 
 - `npm`
   ```
-  npm i -S @babybeet/angular-testing-kit
+  npm i -S @lazycuh/angular-testing-kit
   ```
 - `pnpm`
   ```
-  pnpm i -S @babybeet/angular-testing-kit
+  pnpm i -S @lazycuh/angular-testing-kit
   ```
 - `yarn`
   ```
-  yarn add @babybeet/angular-testing-kit
+  yarn add @lazycuh/angular-testing-kit
   ```
 
 ## `assertThat()`
