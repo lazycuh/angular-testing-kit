@@ -27,7 +27,7 @@
     "@angular-devkit/build-angular": "^18.1.1",
     "@angular/cli": "^18.1.1",
     "@angular/compiler-cli": "^18.1.1",
-    "@lazycuh/eslint-config-base": "^3.0.0",
+    "@lazycuh/eslint-config-base": "^3.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/js-beautify": "^1.14.3",
     "angular-eslint": "^18.1.0",
