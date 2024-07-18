@@ -1,6 +1,6 @@
 {
   "name": "@lazycuh/angular-testing-kit",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "scripts": {
     "copy-assets": "cp CONTRIBUTING.md README.md LICENSE dist/*",
     "build": "ng build && pnpm copy-assets",
